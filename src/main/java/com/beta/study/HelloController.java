@@ -16,7 +16,6 @@ public class HelloController {
     @Autowired
     private UserMapper userMapper;
 
-
     @Autowired
     private SecondUserMapper secondUserMapper;
 
