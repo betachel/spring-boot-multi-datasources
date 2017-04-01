@@ -1,6 +1,7 @@
 package com.beta.study;
 
 import com.beta.study.mapper.jdbc.UserMapper;
+import com.beta.study.mapper.secondjdbc.SecondUserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,6 +15,10 @@ public class HelloController {
 
     @Autowired
     private UserMapper userMapper;
+
+
+    @Autowired
+    private SecondUserMapper secondUserMapper;
 
     @RequestMapping("/hello")
     @ResponseBody
@@ -38,7 +43,7 @@ public class HelloController {
     @RequestMapping("/db2")
     @ResponseBody
     public String db2() {
-        System.out.println(userMapper.getAllUsers().get(0).getUserName());
+        System.out.println(secondUserMapper.getAllUsers().get(0).getUserName());
         return "connettion to db2...............";
     }
 }
